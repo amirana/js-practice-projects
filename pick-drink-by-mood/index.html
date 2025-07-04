@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Drink for today</title>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
+        <style>
+             body {
+                    font-family: 'Quicksand', sans-serif;
+                    background-color: #fef6e4;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100vh;
+                    margin: 0;
+                    padding: 0 2rem;
+                    text-align: center;
+                }
+
+                h1 {
+                    color: #001858;
+                    font-size: 1.8rem;
+                    margin-bottom: 20px;
+                    max-width: 500px;
+                }
+
+                #drink-display {
+                    font-size: 1.5rem;
+                    background-color: #fff;
+                    color: #172c66;
+                    padding: 0 24px;
+                    min-width: 280px;
+                    height: 50px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 10px;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+                    margin-bottom: 30px;
+                    transition: all 0.3s ease-in-out;
+                    
+                }
+
+                button {
+                    font-family: 'Quicksand', sans-serif;
+                    padding: 12px 24px;
+                    font-size: 1rem;
+                    background-color: #f582ae;
+                    color: white;
+                    border: none;
+                    border-radius: 999px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+                }
+
+                button:hover {
+                    background-color: #ff4081;
+                }
+        </style>
+    </head>
+    <body>
+        <h1>What drink matches your mood today? 🧋</h1>
+        <div id="drink-display">
+
+        </div>
+        <button type="button" id="drink-btn">Show me my drink</button>
+
+        <script>
+           const moodOptions = [
+            {
+                mood: "I'm tired 😩",
+                drinks: ["Cold brew", "Espresso shot", "Iced americano"]
+            },
+            {
+                mood: "I'm cozy 🧣",
+                drinks: ["Hot chocolate", "Ginger chai", "Cinnamon latte"]
+            },
+            {
+                mood: "I'm feeling creative ✨",
+                drinks: ["Mocha", "Dirty chai", "Thai iced tea"]
+            },
+            {
+                mood: "I'm anxious 😬",
+                drinks: ["Iced green tea", "Lavender milk", "Decaf coffee"]
+            },
+            {
+                mood: "I'm romanticizing my life 🌸",
+                drinks: ["Rose milk", "Iced lavender matcha", "Pink lemonade"]
+            },
+            {
+                mood: "I'm in my clean girl era 💅",
+                drinks: ["Iced matcha latte", "Sparkling lemon water", "Almond milk cold coffee"]
+            },
+            {
+                mood: "I'm mentally on vacation 🏖️",
+                drinks: ["Pina colada smoothie", "Coconut water", "Iced peach tea"]
+            },
+            {
+                mood: "I'm sad but trying 😶‍🌫️",
+                drinks: ["Sweet chai", "Hot cocoa with marshmallows", "Oreo milkshake"]
+            },
+            {
+                mood: "I'm just here for the aesthetic 🎀",
+                drinks: ["Strawberry milk", "Butterfly pea tea", "Pink boba"]
+            },
+            {
+                mood: "I'm in main character mode 🎬",
+                drinks: ["Vanilla latte", "Caramel iced coffee", "Hazelnut cold brew"]
+            },
+            {
+                mood: "I'm on a productivity high 🚀",
+                drinks: ["Doppio espresso", "Iced long black", "Bulletproof coffee"]
+            },
+            {
+                mood: "I'm healing and hydrated 💧",
+                drinks: ["Lemon honey water", "Infused cucumber water", "Coconut lime spritz"]
+            }
+        ];
+
+
+        const display = document.getElementById("drink-display");
+        const button = document.getElementById("drink-btn");
+
+
+        button.addEventListener("click", function () {
+            const randomObject = Math.floor(Math.random() * moodOptions.length);
+
+            const randomMoodDrinks = moodOptions[randomObject];
+            const randomDrinks = Math.floor(Math.random() * randomMoodDrinks.drinks.length);
+
+            // Display the mood and the random drink
+            display.textContent = randomMoodDrinks.mood + " - " + randomMoodDrinks.drinks[randomDrinks];
+        });
+
+        </script>
+    </body>
+</html>
