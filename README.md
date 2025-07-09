@@ -11,6 +11,6 @@ Each project covers a key concept — from DOM manipulation to arrays, functions
 | Challenge Name                     | Live Demo | Source Code |
 |-----------------------------------|-----------|-------------|
 | Random Mood-Drink Generator | [Live](https://amirana.github.io/js-practice-projects/pick-drink-by-mood/) | [Code](./pick-drink-by-mood/) |
-| Random Mood-Drink Generator | [Live](https://amirana.github.io/js-practice-projects/pastel-color-generator/) | [Code](./pastel-color-generator/) |
+| Random Pastel Color Generator | [Live](https://amirana.github.io/js-practice-projects/pastel-color-generator/) | [Code](./pastel-color-generator/) |
 
 
